@@ -1,4 +1,4 @@
-# Given a roman numeral, convert it to an integer. 
+# Given a roman numeral, convert it to an integer.
 # Symbol       Value
 # I             1
 # V             5
@@ -12,18 +12,12 @@
 # Output: 58
 # Explanation: L = 50, V= 5, III = 3.
 
+
 class Solution:
-    converter_map = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
+    converter_map = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+
     def romanToInt(self, s: str) -> int:
-        # if the value of the next string is greater than the current one 
+        # if the value of the next string is greater than the current one
         # subtract that value from the next string and don't add anything in the current sum
         sum = 0
         num_to_b_subtracted = 0
@@ -38,7 +32,7 @@ class Solution:
             num_to_b_subtracted = 0
         return sum
 
+
 sol = Solution()
-print(sol.romanToInt('IX'))
-print(sol.romanToInt('MCMXCIV'))
-        
+print(sol.romanToInt("IX"))
+print(sol.romanToInt("MCMXCIV"))

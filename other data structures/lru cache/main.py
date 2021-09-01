@@ -11,32 +11,34 @@
 # Output:
 # For each test case, in a new line, output will be space separated values of the query.
 
+
 class LRUCacheValue:
     def __init__(self, val, pos):
         self.val = val
         self.pos = pos
-    
+
     def updatePos(self, pos):
         self.pos = pos
 
     def updateValue(self, val):
         self.val = val
 
+
 class LRUListValue:
     def __init__(self, key):
         self.key = key
 
+
 class LRUCache:
-        
-    def __init__(self,cap):
+    def __init__(self, cap):
         # cap:  capacity of cache
-        #Intialize all variable
-        #code here
+        # Intialize all variable
+        # code here
         self.cache = {}
         self.tracker = []
         self.maxSize = cap
         self.size = 0
-    
+
     def updateTracker(self, key):
         posInList = self.cache[key].pos
         self.tracker.remove(posInList)
@@ -48,42 +50,41 @@ class LRUCache:
         self.tracker.append(track)
         self.cache[key] = LRUCacheValue(value, track)
 
-    #This method works in O(1)
+    # This method works in O(1)
     def get(self, key):
-        #code here
+        # code here
         if key in self.cache:
             self.updateTracker(key)
             return self.cache[key].val
         else:
             return -1
-        
-        
-    #This method works in O(1)   
+
+    # This method works in O(1)
     def set(self, key, value):
-        #code here
+        # code here
         if key in self.cache:
-            #Update position in list
+            # Update position in list
             self.updateTracker(key)
             self.cache[key].updateValue(value)
         else:
-            #if cache size is less than capacity
+            # if cache size is less than capacity
             if self.size < self.maxSize:
                 self.addItemToCache(key, value)
                 self.size += 1
-            #if cache size is equal to capacity
+            # if cache size is equal to capacity
             elif self.size == self.maxSize:
                 itemToBeRemoved = self.tracker[0]
-                del(self.cache[itemToBeRemoved.key])
-                del(self.tracker[0])
+                del self.cache[itemToBeRemoved.key]
+                del self.tracker[0]
                 self.addItemToCache(key, value)
 
 
 lru = LRUCache(2)
-lru.set(1,2)
-lru.set(2,3)
-lru.set(1,5)
-lru.set(4,5)
-lru.set(6,7)
+lru.set(1, 2)
+lru.set(2, 3)
+lru.set(1, 5)
+lru.set(4, 5)
+lru.set(6, 7)
 print(lru.get(4))
 print(lru.get(1))
 
@@ -96,4 +97,3 @@ print(lru.get(1))
 # print(lru.get('c'))
 # print(lru.get('a'))
 # print(lru.get('c'))
-

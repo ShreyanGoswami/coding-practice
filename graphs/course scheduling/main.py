@@ -1,4 +1,6 @@
 from typing import List
+
+
 class Solution:
     def getNeighbours(self, curr, graph):
         try:
@@ -13,7 +15,6 @@ class Solution:
         except KeyError:
             pass
 
-    
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         white = set(range(numCourses))
         grey = set()
@@ -21,7 +22,7 @@ class Solution:
 
         if len(prerequisites) == 0:
             return True
-        
+
         def traverse(curr, graph, white, grey, black) -> bool:
             if curr in grey:
                 return False
@@ -34,21 +35,23 @@ class Solution:
                         return False
             self.colourNode(curr, grey, black)
             return True
+
         graph = {}
         for x in prerequisites:
             try:
                 graph[x[0]].append(x[1])
             except KeyError:
                 graph[x[0]] = [x[1]]
-        
+
         for i in range(numCourses):
             if i not in black:
                 if traverse(i, graph, white, grey, black) == False:
                     return False
         return True
 
+
 if __name__ == "__main__":
     s = Solution()
     numOfCourses = 4
-    graph = [[2,0],[1,0],[3,1],[3,2],[1,3]]
+    graph = [[2, 0], [1, 0], [3, 1], [3, 2], [1, 3]]
     print(s.canFinish(numOfCourses, graph))

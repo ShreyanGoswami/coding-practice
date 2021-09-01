@@ -8,6 +8,7 @@
 
 # define a 1D array that tracks how many different ways are there given a certain number of steps. It will be built bottom up.
 
+
 class Solution:
     def climbStairs(self, n: int) -> int:
         diffWaysTotal = {0: 0, 1: 1, 2: 2}
@@ -19,16 +20,17 @@ class Solution:
             return 1
         if n == 2:
             return 2
-        return self.recursive(n-1) + self.recursive(n-2)
-    
+        return self.recursive(n - 1) + self.recursive(n - 2)
+
     def recursive_optimal(self, n, cache):
         if n in cache:
             return cache[n]
         else:
-            differentWaysWithOneStep = self.recursive_optimal(n-1, cache)
-            differentWaysWithTwoStep = self.recursive_optimal(n-2, cache)
+            differentWaysWithOneStep = self.recursive_optimal(n - 1, cache)
+            differentWaysWithTwoStep = self.recursive_optimal(n - 2, cache)
             cache[n] = differentWaysWithOneStep + differentWaysWithTwoStep
             return cache[n]
+
 
 sol = Solution()
 print(sol.climbStairs(4))

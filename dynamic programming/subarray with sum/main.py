@@ -10,7 +10,7 @@ def findSum(arr, sum):
         if temp == 0:
             endIndex = i
         else:
-            for j in range(i+1, len(arr)):
+            for j in range(i + 1, len(arr)):
                 temp = temp - arr[j]
                 if temp < 0:
                     break
@@ -18,20 +18,21 @@ def findSum(arr, sum):
                     endIndex = j
                     break
         if endIndex != -1:
-            print(startIndex+1, endIndex+1)
+            print(startIndex + 1, endIndex + 1)
             found = True
             break
     if found == False:
         print(-1)
 
+
 def findSumOptimized(arr, sum):
     found = False
-    startIndex=0
-    endIndex=0
-    currSum=arr[startIndex]
+    startIndex = 0
+    endIndex = 0
+    currSum = arr[startIndex]
     while True:
         if currSum == sum:
-            print(startIndex+1, endIndex+1)
+            print(startIndex + 1, endIndex + 1)
             break
         if currSum < sum:
             endIndex = endIndex + 1
@@ -46,14 +47,14 @@ def findSumOptimized(arr, sum):
 
 def main():
     t = int(input())
-    for i in range(0,t):
-        l=input().split(' ')
+    for i in range(0, t):
+        l = input().split(" ")
         n, s = int(l[0]), int(l[1])
         inp = input().strip()
-        if inp is not None and inp != '':
-            inp = inp.split(' ')
+        if inp is not None and inp != "":
+            inp = inp.split(" ")
             inp = [int(i) for i in inp]
             findSumOptimized(inp, s)
 
-main()
 
+main()

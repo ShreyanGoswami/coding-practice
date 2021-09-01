@@ -10,15 +10,15 @@ def topoSort(n, graph):
                 if v not in visited:
                     topSort(v, graph, visited, res)
         res.append(curr)
-    
+
     for v in graph.keys():
         if v not in visited:
             topSort(v, graph, visited, res)
-    
+
     toAdd = list(set(range(n).difference(set(res))))
     res.extend(toAdd)
     return list(reversed(res))
-    
+
 
 if __name__ == "__main__":
     g = {1: [3], 2: [3], 4: [0, 1], 5: [0, 2]}

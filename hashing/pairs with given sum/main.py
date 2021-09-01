@@ -1,5 +1,6 @@
-# Given two unsorted arrays A of size N and B of size M of distinct elements, 
+# Given two unsorted arrays A of size N and B of size M of distinct elements,
 # the task is to find all pairs from both arrays whose sum is equal to X.
+
 
 def findPairs(arr1, arr2, k):
     d = {}
@@ -9,14 +10,15 @@ def findPairs(arr1, arr2, k):
             d[x] += 1
         except KeyError:
             d[x] = 1
-    
+
     for x in arr1:
         toFind = k - x
         if toFind in d:
             res.append([x, toFind])
     return res
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     stoi = int
     itos = str
@@ -31,8 +33,8 @@ if __name__ == '__main__':
         if len(res) == 0:
             print("-1")
         for i in range(len(res)):
-            print(" ".join(itos(p) for p in res[i]),end="")
+            print(" ".join(itos(p) for p in res[i]), end="")
             if i != len(res) - 1:
-                print(",",end=" ")
+                print(",", end=" ")
             else:
                 print()

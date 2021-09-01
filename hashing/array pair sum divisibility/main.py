@@ -8,13 +8,13 @@ def areAllPairsDivisible(arr, n, k):
             d[x] += 1
         except KeyError:
             d[x] = 1
-    
+
     for num, count in d.items():
         if num == 0:
             if count % 2 != 0:
                 return False
             continue
-        
+
         toFind = k - num
         if toFind == num:
             if count % 2 != 0:
@@ -26,7 +26,8 @@ def areAllPairsDivisible(arr, n, k):
                 return False
     return True
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     stoi = int
     t = stoi(inp())
