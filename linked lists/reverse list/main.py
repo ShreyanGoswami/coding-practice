@@ -3,6 +3,7 @@ class node:
         self.data = val
         self.next = None
 
+
 def reverseList(self):
     # Code here
     if self.head is None:
@@ -26,7 +27,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.lastNode = None
-    
+
     def insert(self, val):
         if self.head == None:
             self.head = node(val)
@@ -35,7 +36,7 @@ class LinkedList:
             new_node = node(val)
             self.lastNode.next = new_node
             self.lastNode = new_node
-    
+
     def createList(self, arr, n):
         for x in arr:
             self.insert(x)
@@ -44,11 +45,12 @@ class LinkedList:
     def printList(self):
         temp = self.head
         while temp is not None:
-            print(temp.data, end= " ")
+            print(temp.data, end=" ")
             temp = temp.next
         print()
 
     reverse_List = reverseList
+
 
 def main():
     t = int(input())
@@ -59,5 +61,6 @@ def main():
         head = lis.createList(arr, n)
         lis.reverse_List()
         lis.printList()
+
 
 main()

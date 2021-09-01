@@ -28,7 +28,7 @@ def isCyclic(n, graph):
             return 0
         changeColour(grey, black, node)
         return 0
-    
+
     for i in range(n):
         if i in graph and i in white:
             white.remove(i)
@@ -38,15 +38,29 @@ def isCyclic(n, graph):
                 return 1
     return 0
 
+
 if __name__ == "__main__":
-    graph =  {0: [1, 0]}
+    graph = {0: [1, 0]}
     assert isCyclic(2, graph) == 1
-    graph =  {0: [1], 1: [2], 2: [3]}
+    graph = {0: [1], 1: [2], 2: [3]}
     assert isCyclic(4, graph) == 0
-    graph =  {0: [1], 2: [3], 3: [2]}
+    graph = {0: [1], 2: [3], 3: [2]}
     assert isCyclic(4, graph) == 1
     graph = {6: [21], 17: [12], 2: [11], 9: [11]}
     assert isCyclic(29, graph) == 0
-    graph = {12: [28], 67:[17], 0: [26], 30: [11], 38: [85], 57: [60], 57: [15], 75: [31], 65: [80], 75: [19], 68: [67], 73: [84], 63: [86]}
+    graph = {
+        12: [28],
+        67: [17],
+        0: [26],
+        30: [11],
+        38: [85],
+        57: [60],
+        57: [15],
+        75: [31],
+        65: [80],
+        75: [19],
+        68: [67],
+        73: [84],
+        63: [86],
+    }
     assert isCyclic(88, graph) == 0
-

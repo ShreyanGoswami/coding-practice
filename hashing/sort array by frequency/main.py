@@ -1,6 +1,7 @@
-# Given an array A[] of integers, sort the array according to frequency of elements. 
+# Given an array A[] of integers, sort the array according to frequency of elements.
 # That is elements that have higher frequency come first. If frequencies of two elements are same, then smaller number comes first.
 import operator
+
 
 def sortByFrequency(arr, n):
     d = {}
@@ -10,8 +11,8 @@ def sortByFrequency(arr, n):
         except KeyError:
             d[x] = 1
     temp = list(d.items())
-    temp = sorted(temp, key = lambda x : (x[0]))
-    temp = sorted(temp, key = lambda x : (x[1]), reverse=True)
+    temp = sorted(temp, key=lambda x: (x[0]))
+    temp = sorted(temp, key=lambda x: (x[1]), reverse=True)
 
     res = []
     for x in temp:
@@ -19,7 +20,8 @@ def sortByFrequency(arr, n):
             res.append(x[0])
     return res
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     stoi = int
     itos = str
@@ -28,4 +30,4 @@ if __name__ == '__main__':
         n = stoi(inp())
         arr = list(map(stoi, inp().strip().split()))
         arr = sortByFrequency(arr, n)
-        print(' '.join(itos(x) for x in arr))
+        print(" ".join(itos(x) for x in arr))

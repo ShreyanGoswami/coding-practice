@@ -1,18 +1,19 @@
-# Given two arrays of integers, write a program to check if a pair of values (one value from each array) exists 
+# Given two arrays of integers, write a program to check if a pair of values (one value from each array) exists
 # such that swapping the elements of the pair will make the sum of two arrays equal.
 def doesPairExist(arr1, arr2):
     sum1 = sum(arr1)
     sum2 = sum(arr2)
-    diff = abs(sum1-sum2)
+    diff = abs(sum1 - sum2)
     d = {}
     for x in arr2:
         d[x] = 1
     for x in arr1:
-        if abs(diff-x) in d.keys():
+        if abs(diff - x) in d.keys():
             return 1
     return -1
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     stoi = int
     t = stoi(inp())

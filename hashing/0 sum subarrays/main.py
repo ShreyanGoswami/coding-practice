@@ -1,14 +1,15 @@
 # You are given an array A of size N. You need to print the total count of sub-arrays having their sum equal to 0
 
+
 def lenOfZeroSumSubArrays(arr, n):
-    d = {arr[0]:[0]}
+    d = {arr[0]: [0]}
     prefixSum = [arr[0]]
     if arr[0] == 0:
         count = 1
     else:
         count = 0
     for i in range(1, n):
-        prefixSum.append(arr[i] + prefixSum[i-1])
+        prefixSum.append(arr[i] + prefixSum[i - 1])
         if prefixSum[i] == 0:
             count += 1
 
@@ -20,7 +21,8 @@ def lenOfZeroSumSubArrays(arr, n):
 
     return count
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     stoi = int
     itos = str

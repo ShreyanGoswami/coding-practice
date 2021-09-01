@@ -2,7 +2,7 @@ def findCommon(n1, n2, n3):
     d = {}
     res = []
     for x in n1:
-            d[x] = [1, 0, 0]
+        d[x] = [1, 0, 0]
     for x in n2:
         if x in d.keys():
             v = d[x]
@@ -11,14 +11,15 @@ def findCommon(n1, n2, n3):
         if x in d.keys():
             v = d[x]
             v[2] = 1
-    for k,v in d.items():
+    for k, v in d.items():
         if v == [1, 1, 1]:
             res.append(k)
     if len(res) != 0:
         return res
     return [-1]
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     stoi = int
     itos = str

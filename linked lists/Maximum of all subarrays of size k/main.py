@@ -9,20 +9,21 @@ def findLargest(arr, n, k):
     maxEle = -1
     while end < n:
         if maxEle == -1:
-            temp = [stoi(x) for x in arr[start:end+1]]
+            temp = [stoi(x) for x in arr[start : end + 1]]
             maxEle = max(temp)
         else:
             if maxEle < stoi(arr[end]):
                 maxEle = stoi(arr[end])
             elif stoi(arr[start - 1]) == maxEle:
-                temp = [stoi(x) for x in arr[start:end+1]]
+                temp = [stoi(x) for x in arr[start : end + 1]]
                 maxEle = max(temp)
 
-        print(maxEle, end = ' ')
+        print(maxEle, end=" ")
         start += 1
         end += 1
-            
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     inp = input
     itos = str
     stoi = int

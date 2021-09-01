@@ -1,5 +1,6 @@
-# The cost of stock on each day is given in an array A[] of size N. 
+# The cost of stock on each day is given in an array A[] of size N.
 # Find all the days on which you buy and sell the stock so that in between those days your profit is maximum.
+
 
 def findDays(arr, n):
     res = []
@@ -9,10 +10,10 @@ def findDays(arr, n):
             buyStart = start
             start += 1
             isSellFound = True
-            if start != n-1:
+            if start != n - 1:
                 while arr[start] < arr[start + 1]:
                     start += 1
-                    if start == n-1:
+                    if start == n - 1:
                         if arr[start] < arr[start - 1]:
                             isSellFound = False
                         break
@@ -26,7 +27,8 @@ def findDays(arr, n):
             start += 1
     return res
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     stoi = int
     t = stoi(inp())
@@ -35,9 +37,9 @@ if __name__ == '__main__':
         arr = list(map(stoi, inp().strip().split()))
         res = findDays(arr, n)
         if len(res) > 0:
-            op = ''
+            op = ""
             for x in res:
-                op = op + '(' + str(x[0]) + ' ' + str(x[1]) + ') '
+                op = op + "(" + str(x[0]) + " " + str(x[1]) + ") "
             print(op)
         else:
-            print('No Profit')
+            print("No Profit")

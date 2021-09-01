@@ -3,10 +3,12 @@
 # Input: 1->2->4, 1->3->4
 # Output: 1->1->2->3->4->4
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
 
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
@@ -16,24 +18,23 @@ class Solution:
             return l2
         if l2 == None:
             return l1
-        res = ListNode('start')
+        res = ListNode("start")
         self.mergeList(l1, l2, res)
         return res
 
     def mergeList(self, l1: ListNode, l2: ListNode, res: ListNode):
         greaterVal, listToChose = self.checkGreater(l1, l2)
-        if res.val == 'start':
+        if res.val == "start":
             res.val = greaterVal
         else:
             res.next = ListNode(greaterVal)
             res = res.next
-        
-        if listToChose == 'first':
+
+        if listToChose == "first":
             res.next = ListNode(l2.val)
         else:
             res.next = ListNode(l1.val)
         res = res.next
-        
 
         if l1.next != None and l2.next != None:
             self.mergeList(l1.next, l2.next, res)
@@ -53,4 +54,3 @@ class Solution:
         while l.next != None:
             res.next = ListNode(l.val)
             l = l.next
-

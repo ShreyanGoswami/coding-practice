@@ -6,10 +6,10 @@ class Pair:
 
 class stack:
     def __init__(self):
-        self.s=[]
+        self.s = []
 
-    def push(self,x):
-        #CODE HERE
+    def push(self, x):
+        # CODE HERE
         if len(self.s) == 0:
             self.s.append(Pair(x, x))
             return
@@ -20,19 +20,19 @@ class stack:
             self.s.append(Pair(x, minVal))
 
     def pop(self):
-        #CODE HERE
+        # CODE HERE
         if len(self.s) == 0:
             return -1
         return self.s.pop().first
-        
 
     def getMin(self):
-        #CODE HERE
+        # CODE HERE
         if len(self.s) == 0:
             return -1
         return self.s[-1].second
-    
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     s = stack()
     s.push(3)
     print(s.getMin())
@@ -41,4 +41,3 @@ if __name__ == '__main__':
     print(s.getMin())
     s.push(4)
     print(s.getMin())
-

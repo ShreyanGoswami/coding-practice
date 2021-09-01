@@ -2,22 +2,21 @@ class Node:
     def __init__(self, c):
         self.endOfWord = False
         self.d = {}
-    
+
     def addChild(self, char, child):
         if char not in self.d:
             self.d[char] = child
-    
+
     def setEndOfWord(self):
         self.endOfWord = True
 
-class Trie:
 
+class Trie:
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        self.root = Node('')
-        
+        self.root = Node("")
 
     def insert(self, word: str) -> None:
         """
@@ -32,7 +31,6 @@ class Trie:
                 curr.addChild(x, newNode)
                 curr = newNode
         curr.setEndOfWord()
-        
 
     def search(self, word: str) -> bool:
         """
@@ -44,7 +42,6 @@ class Trie:
                 return False
             curr = curr.d[x]
         return curr.endOfWord
-        
 
     def startsWith(self, prefix: str) -> bool:
         """
@@ -57,12 +54,13 @@ class Trie:
             curr = curr.d[x]
         return True
 
+
 if __name__ == "__main__":
     obj = Trie()
-    word = 'apple'
+    word = "apple"
     obj.insert(word)
-    obj.insert('cde')
-    print(obj.search('app'))
+    obj.insert("cde")
+    print(obj.search("app"))
     x = 1
     # param_2 = obj.search(word)
     # param_3 = obj.startsWith(prefix)

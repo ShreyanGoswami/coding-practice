@@ -1,6 +1,7 @@
-# Given an array A of size N having distinct elements, 
-# the task is to find the next greater element for each element of the array in order of their appearance in the array. 
-# If no such element exists, output -1 
+# Given an array A of size N having distinct elements,
+# the task is to find the next greater element for each element of the array in order of their appearance in the array.
+# If no such element exists, output -1
+
 
 def nextLargestOptimized(arr, n):
     res = []
@@ -17,11 +18,12 @@ def nextLargestOptimized(arr, n):
         s.append(x)
     return res[::-1]
 
+
 def nextLargest(arr, n):
     res = []
     for i in range(n):
         isFound = False
-        for j in range(i+1, n):
+        for j in range(i + 1, n):
             if arr[i] < arr[j]:
                 isFound = True
                 res.append(arr[j])
@@ -29,8 +31,9 @@ def nextLargest(arr, n):
         if isFound == False:
             res.append(-1)
     return res
-    
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     inp = input
     itos = int
     stoi = str

@@ -1,6 +1,6 @@
 def removeKdigits(num: str, k: int) -> str:
     if len(num) == k:
-        return '0'
+        return "0"
     s = []
     for x in num:
         if len(s) == 0:
@@ -17,12 +17,13 @@ def removeKdigits(num: str, k: int) -> str:
     while k != 0:
         s.pop()
         k -= 1
-    res = ''.join(x for x in s).lstrip('0')
+    res = "".join(x for x in s).lstrip("0")
     if len(res) == 0:
-        return '0'
+        return "0"
     return res
 
+
 if __name__ == "__main__":
-    s = '1432219'
+    s = "1432219"
     k = 3
     print(removeKdigits(s, k))

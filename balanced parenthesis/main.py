@@ -1,34 +1,31 @@
-
-
 def isBalanced(s):
     stack = []
     for x in s:
-        if x == '(':
+        if x == "(":
             stack.append(x)
-        elif x == '[':
+        elif x == "[":
             stack.append(x)
-        elif x == '{':
+        elif x == "{":
             stack.append(x)
-        elif x == ')':
+        elif x == ")":
             if len(stack) == 0:
                 return False
-            if stack.pop() != '(':
+            if stack.pop() != "(":
                 return False
-        elif x == ']':
+        elif x == "]":
             if len(stack) == 0:
                 return False
-            if stack.pop() != '[':
+            if stack.pop() != "[":
                 return False
-        elif x == '}':
+        elif x == "}":
             if len(stack) == 0:
                 return False
-            if stack.pop() != '{':
+            if stack.pop() != "{":
                 return False
     if len(stack) == 0:
         return True
     else:
         return False
-        
 
 
 def main():
@@ -37,8 +34,9 @@ def main():
         s = input()
         sol = isBalanced(s)
         if sol == True:
-            print('balanced')
+            print("balanced")
         else:
-            print('not balanced')
+            print("not balanced")
+
 
 main()

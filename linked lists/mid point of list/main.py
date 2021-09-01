@@ -3,25 +3,28 @@ class node:
         self.data = val
         self.next = None
 
+
 class Linked_List:
     def __init__(self):
         self.head = None
-    
+
     def insert(self, val):
         if self.head == None:
             self.head = node(val)
         else:
             new_node = node(val)
             temp = self.head
-            while(temp.next):
+            while temp.next:
                 temp = temp.next
             temp.next = new_node
+
 
 def createList(arr, n):
     lis = Linked_List()
     for x in arr:
         lis.insert(x)
     return lis.head
+
 
 def findMid(head):
     slowPtr = head
@@ -42,5 +45,6 @@ def main():
         arr = list(map(int, input().strip().split()))
         head = createList(arr, n)
         print(findMid(head).data)
+
 
 main()

@@ -16,11 +16,11 @@ def findNonRepeating(arr, n):
                 else:
                     # add x to q
                     q.append(x)
-                 # take the 0th element(if present) from q and add to res else add -1
+                # take the 0th element(if present) from q and add to res else add -1
                 if len(q) != 0:
                     res.append(q[0])
                 else:
-                    res.append('-1')
+                    res.append("-1")
         else:
             # take the 0the element(if present) from q and add to res else add -1
             if len(q) == 0:
@@ -29,7 +29,8 @@ def findNonRepeating(arr, n):
                 res.append(q[0])
     return res
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     itos = int
     stoi = str

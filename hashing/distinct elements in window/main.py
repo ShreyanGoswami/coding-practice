@@ -1,4 +1,4 @@
-# Given an array A[] of size N and an integer K. 
+# Given an array A[] of size N and an integer K.
 # Your task is to complete the function countDistinct() which prints the count of distinct numbers in all windows of size k in the array A[].
 def getDisintctCount(arr, n, k):
     d = {}
@@ -30,7 +30,8 @@ def getDisintctCount(arr, n, k):
     res.append(len(d.keys()))
     print(" ".join(itos(x) for x in res))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     inp = input
     stoi = int
     t = stoi(inp())

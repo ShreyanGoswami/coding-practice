@@ -45,13 +45,14 @@ class LRUCache:
                 min_hits = cached_item.hit
                 to_evict = key
         return to_evict
-    
+
     def decreaseAge(self):
         for cached_item in self.cache.values():
             cached_item.hit = cached_item.hit - 1
 
     def getCache(self):
         return self.cache
+
 
 # Questions
 # What will happen if the cache has a single item left and we add one value and add another? Should the last one be evicted?
@@ -61,11 +62,11 @@ class LRUCache:
 # cache.put(2, 2)
 # print(cache.get(1))
 # cache.put(3, 3) # Evict 2
-# print(cache.get(2))      
+# print(cache.get(2))
 # cache.put(4, 4)  # Evict 1
-# print(cache.get(1))      
-# print(cache.get(3))      
-# print(cache.get(4))   
+# print(cache.get(1))
+# print(cache.get(3))
+# print(cache.get(4))
 
 cache = LRUCache(1)
 cache.put(2, 1)
